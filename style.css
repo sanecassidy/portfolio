@@ -1,0 +1,350 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Catamaran', sans-serif;
+  background-color: white;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  display: flex;  /* Added 2020-02-14 to try to push footer down. */ 
+  flex-direction: column;
+}
+
+nav, a, footer {
+  color: #F7F9FB; /*#F8E9A1;  This is an alternative, light yellow color.*/
+  text-shadow:
+    /*cardinal*/ 2px 0px 0px black, -2px 0px 0px black, 0px 2px 0px black, 0px -2px 0px black
+    /*diagonal*/, 1px 1px 0px black, 1px -1px 0px black, -1px 1px 0px black, -1px -1px 0px black
+    /*rounding*/ , 2px 1px 0px black, 2px -1px 0px black, 1px 2px 0px black, 1px -2px 0px black, -1px 2px 0px black, -1px -2px 0px black, -2px 1px 0px black, -2px -1px 0px black
+    /*blur*/ , 0 0 6px black
+    ;
+}
+
+h1 {
+  text-align: center;
+}
+
+.centeredWrapper {
+  max-width: 800px; /* This controls the maximum width of the display area. Somebody opening the browser wider than this will just be generating wasted space to left and right of the content.*/
+  margin: 0 auto;
+}
+
+main {
+  max-width: 800px; /* This controls the maximum width of the display area. Somebody opening the browser wider than this will just be generating wasted space to left and right of the content.*/
+  margin: 16px auto;
+  /* flex: 1 0 auto;  Added 2020-02-14 to try to push footer down. */
+}
+
+.indexPage { /* Experimenting here to see if I can make the circles more than 3-across. */
+  max-width: 1000px;
+}
+
+main a {
+  text-decoration: none; /* Takes the underline away. */
+}
+
+nav {
+  background-color: rgb(230, 159, 0); /*previously #996600*/
+  font-weight: 500;
+  text-align: center;
+  /* flex: 1 0 auto;  Added 2020-02-14 to try to push footer down. */
+}
+
+nav p{
+  margin-top: 0; /* This clears a white space that was appearing above the nav bar. */
+  margin-bottom: 0;
+}
+
+nav p a{ /* This section resizes the nav bar link padding to bring the links closer together. */
+  padding-right: 3px;
+  padding-left: 3px;
+}
+
+.nav1, .nav2, .nav3 {
+  color: white; /* alternate colors considered include rgb(86, 180, 233) rgb(240,228,66) rgb(213,94,0) rgb(0,158,115) */
+  text-shadow:
+  /*cardinal*/ 2px 0px 0px black, -2px 0px 0px black, 0px 2px 0px black, 0px -2px 0px black
+  /*diagonal*/, 1px 1px 0px black, 1px -1px 0px black, -1px 1px 0px black, -1px -1px 0px black
+  /*rounding*/ , 2px 1px 0px black, 2px -1px 0px black, 1px 2px 0px black, 1px -2px 0px black, -1px 2px 0px black, -1px -2px 0px black, -2px 1px 0px black, -2px -1px 0px black
+  /*blur*/ , 0 0 6px black
+  ;
+}
+
+#nav4 {
+  color: hsl(120, 100%, 90%); /* hsl(201.6, 77%, 80%); /* L= 62.5% for rgb(86, 180, 233) */
+}
+
+#nav5 {
+  color: hsl(240, 100%, 90%); /* hsl(26.5, 100%, 80%); /* L= 41.8% for rgb(213,94,0) */
+  /*hsl(55.9, 85.3%, 60%);  based on rgb(240,228,66) */
+}
+
+#nav6 {
+  color: hsl(0, 100%, 90%); /* hsl(163.7, 100%, 80%); /* L= 31% for rgb(0,158,115) */
+}
+
+#email {/* Hack for stupid problem where text shadow would be cut off left side of link to my email address on About Me page. */
+  padding-left: 3px;
+}
+
+ul {
+  padding: 0 1em;
+  list-style-type: none;
+  text-align: center; /* Adding this to the container shifts the whole thing to center. */
+}
+
+ul li {
+  display: inline;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.simpleList {
+  list-style-type: circle;
+  display: list-item;
+  text-align: left;
+}
+
+.lefty {
+  text-align: left;
+}
+
+.toolsMaterials {
+  vertical-align: top;
+}
+
+nav a {
+  font-size: 1.2em;
+  padding: 0 .5em 0 .5em;
+  text-decoration: none; /* This is what takes the underline away. */
+}
+
+nav a:hover, footer a:hover {
+  background-color: rgb(255, 255, 255, 0.3); /* #687864; */
+}
+
+main {
+  padding: 0 1em;
+}
+
+.homePage { /* Do I even still use this class anymore? I don't think so. */
+  background-image: url("images/p3_hjb_full-set.JPG");
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: right top;
+}
+
+h3 {
+  text-align: center;
+}
+
+h5 {
+  text-align: center;
+}
+
+.disappearingInk {
+  color: white;
+}
+
+figure {
+  float: left;
+  width: 60%;
+}
+
+img {
+  width: 100%;
+}
+
+figcaption {
+  font-style: italic;
+  font-size: .9em;
+  text-align: center;
+}
+
+article {
+  overflow: auto;
+}
+
+@media only screen and (max-width: 550px) {
+  figure {
+    width: 100%;
+    margin: 0;
+  }
+  article {
+    width: 100%;
+  }
+}
+
+.circle {
+  margin: 10px;
+  text-align: center;
+  /* float: left;  Commented out because Visual Studio Code indicated an error. Error may or may not related to my adoption of the display: flex structure which I adopted, obviating this line. I'm not sure. */
+  width: 221px;
+  height: 221px;
+  border: 5px solid #8FC1E3;
+  border-radius: 50%;
+  display: inline-block; /* added 2020-02-12, may not be necessary */
+}
+
+.containerOfCircles {
+  margin: 0 auto;
+  max-width: 1000px; /*964px is smallest width that allows for 4 circles in row. 723px is smallest width that allows for 3 circles in row.*/
+  display: flex; /* added 2020-02-12 */
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.darkGel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.darkGel:hover {
+  background-color: rgb(0, 0, 0, 0.3);
+}
+
+table {
+  height: 100%;
+  width: 100%;
+  vertical-align: center;
+  text-align: center; /* This doesn't seem to do anything to items with names so short that they don't wrap.  Or maybe that should be: items that are only one line long. I have no idea why. */
+}
+
+.circle a {
+  text-decoration: none;
+  margin: 0 auto;
+}
+
+#oaomw {
+  background-image: url("images/p1_oaomw_tiffany-in-chair.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0 -20px;
+}
+
+#sbike {
+  background-image: url("images/p2_sbike_ridden.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+
+#hjb {
+  background-image: url("images/p3_hjb_final, top.JPG");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+
+#elfshelf {
+  background-image: url("images/p4_elfshelf_CAD.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+#monomano {
+  background-image: url("images/p5_monomano_CAD-in-use.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center 5px;
+}
+
+#tensegrity {
+  background-image: url("images/p6_tensegrity_cover-letter.JPG");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+#gofast {
+  background-image: url("images/p7_gofast_still.JPG");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center 0;
+}
+
+#mothership {
+  background-image: url("images/p8_mothership_matthew.JPG");
+  background-repeat: no-repeat;
+  background-size: auto 120%;
+  background-position: center;
+}
+
+#twinbs {
+  background-image: url("images/p9_twinbs_piece.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center -15px;
+}
+
+#fiberspool {
+  background-image: url("images/p10_fiberspool_CAD-cable-weights.JPG");
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center;
+}
+
+#escher {
+  background-image: url("images/p11_Escher_puzzle_complete.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+video {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+p a {
+  color: gray;
+  text-shadow: none;
+  font-style: bold;
+}
+
+p img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  min-width: 300px;
+}
+
+footer {
+  clear: both;
+  background-color: hsl(210, 100%, 50%); /* Was #336699; */
+  padding: 0 1em;
+  flex-shrink: 0; /* Added 2020-02-14 to try to push footer down. */
+}
+
+.notFooter {
+  flex: 1 0 auto; /* Added 2020-02-14 to try to push footer down. */
+}
+
+footer li{ /* Hack to bring links closer together so they don't wrap on small screen. */
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+footer a {
+  text-decoration: none; /* This is what takes the underline away. */
+}
+
+footer ul { /* This was necessary to remove white space below the footer bar. */
+  margin-top: 0;
+  margin-bottom: 0;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sane Portfolio: Escher</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran|Josefin+Sans">
+    <link rel="stylesheet" href="style.css">
+
+    <meta name=viewport content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="images/favicon.png">  <!--This adds a "favicon" visible in the tab.-->
+  </head>
+
+  <body>
+
+    <div class="notFooter">
+      <nav>
+        <p>
+          <a class="nav1" href="about sane.html">
+            <span>S. </span>
+            <span id="nav4">Sane</span>
+            <span> Cassidy's</span>
+          </a>
+          <a class="nav2" href="index.html">
+            <span>Project </span>
+            <span id="nav5">Portfolio</span>
+          </a>
+          <a class="nav3" href="resume.html">
+            <span>and </span>
+            <span id="nav6">Résumé</span>
+          </a>
+        </p>
+      </nav>
+
+      <main>
+        
+        <!--
+        <h5>This page is a work in progress, last updated 2019-03-25.
+          <br>Near-future improvements will include the addition of images from the CAD design, video from the manufacturing process, and pictures from the final assembly, as well as tweaks to the writing.</h5>
+        -->
+        
+        <h1>M. C. Escher Tessellation Puzzle</h1>
+        <img src="images/p11_Escher_puzzle_complete.jpg" alt="">
+
+        <h2>Inception</h2>
+        <p>This was a personal project to make an art- and geometry- focused birthday gift for my brother's boys, who just turned ages 6 and 4 in the same month.</p>
+
+        <h2>Concept</h2>
+        <p>A jigsaw-type puzzle based on one of M. C. Escher's tessellations.  All of the puzzle pieces are the same shape, but different colors so that the puzzle itself can be rearranged into different patterns.  Additionally, on its back side the puzzle contains lines of text which, when unscrambled and arranged correctly, reveals a message wishing them a happy birthday and introducing them to the name M. C. Escher.</p>
+
+        <table>
+          <tr class="toolsMaterials">
+            <td>
+              <h2 class="lefty">Tools</h2>
+              <ul>
+                <li class="simpleList">SolidWorks</li>
+                <li class="simpleList">Adobe Illustrator</li>
+                <li class="simpleList">Epilog laser cutter</li>
+              </ul>
+            </td>
+            <td>
+              <h2 class="lefty">Materials</h2>
+              <ul>
+                <li class="simpleList">3/16" thick basswood sheet</li>
+                <li class="simpleList">colored Sharpies</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+
+        <h2>Method</h2>
+        <ol>
+          <li>Search for suitable Escher tessellation.</li>
+          <p>While I really like some of Escher's more intricate tessellations -- for example, <a href="https://www.mcescher.com/gallery/switzerland-belgium/no-11-sea-horse/" target="_blank">Sea Horse (No. 11)</a> and <a href="https://www.mcescher.com/gallery/back-in-holland/no-56-lizard/" target="_blank">Lizard (No. 56)</a> -- I thought it best to choose something a little simpler.  (The two young boys may not always be super gentle with their possessions, after all.)  Ultimately I landed on a print of Flying Fish, which seems to be a variant of <a href="https://www.mcescher.com/gallery/back-in-holland/no-44-bird/">Bird (No. 44)</a>.</p>
+          <li>Create patternable unit based on Escher's art.</li>
+          <p>In this step, I imported an image file into a sketch in SolidWorks and started tracing using lines, arcs, and splines as necessary.
+            <br>One thing that I found pretty quickly was that, despite the fact that they look identical, no two fish in Escher's drawing are exactly the same.  It seems that he hand-drew each and every one individually.  That briefly threw a wrench in my plans, since it had been my intention to lift one iconic fish from the original work, and then use patterning tools within the SolidWorks sketch and assembly environments to construct the rest of the field.  I couldn't do that exactly, however, since slight variations in each individual fish make it unable to mesh perfectly with itself.
+            <br>What I ended up having to do here, rather than copy any one specific fish shape, was to dive a little deeper into the geometry.  I went looking for the iconic, basic, elements, so that I could map them to a simplified patternable geometry, and construct my own basic, iconic fish.
+            <br>As it turns out, all of the geometry necessary to create this particular tessellation can be contained within a small unit centered around a single 30°-60°-90° triangle which intersects parts of three adjacent fish.
+            <br>
+            <img src="images/p11_seed_2.png" width="200" alt="Pattern Seed">
+            <br>This one element can be copied and rotated about various points such that lines shown become different parts of a single fish.  With just a little interpolation to smooth the lines blending one part of the geometry into another, I had my iconic fish.
+            <br>
+            <img src="images/p11_one_fish.png" width="200" alt="Pattern Seed">
+          </p>
+          <li>Pattern iconic element to create full field.</li>
+          <li>Trim to fit boundaries of stock material.</li>
+            <img src="images/p11_CAD.JPG" width="200" alt="Pattern Seed">
+          <li>Generate .DXF files that can be read into Adobe Illustrator at the 3D printer's host computer.</li>
+          <li>Place geometry of back-side message in Illustrator, then print with laser cutter.</li>
+          <li>Place geometry from two different .DXF files on top of each other: one corresponding to the engraving, and one to the thru cuts.  Print with laser cutter.</li>
+          <li>Color front-side of fish with Sharpies in selected pattern.</li>
+          <li>Scramble pieces to obscure message.</li>
+          <li>Mail to the birthday boys.</li>
+        </ol>
+
+        <h2>Next Steps</h2>
+        <p>This project is complete as it stands.  I may revisit the concept for some future gift, however.  If I do, there are a handful of things that I might change.  I might choose a more complicated and intricate tessellation -- one that might be more fragile, at a time when the boys are a little more grown up and can be trusted to be more gentle with their toys.  I would also aim to source a material with more regular flatness.  Warping in the raw material caused the frame to be a little less than ideal, here.  Still, I'm pretty happy with the end result.</p>
+
+      </main>
+    </div>
+
+    <footer>
+      <ul class="navBar">
+        <li> <a href="about sane.html">S. Sane Cassidy's</a> </li>
+        <li> <a href="index.html">Project Portfolio</a> </li>
+        <li> <a href="resume.html">and Résumé</a> </li>
+      </ul>
+    </footer>
+
+  </body>
+</html>
