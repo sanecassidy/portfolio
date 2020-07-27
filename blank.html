@@ -15,7 +15,7 @@
   <body>
 
     <div class="notFooter">
-      <nav>
+      <nav id="topNav">
         <p>
           <a class="nav1" href="aboutSane.html">
             <span>S. </span>
@@ -88,6 +88,19 @@
         <li> <a href="resume.html">and Résumé</a> </li>
       </ul>
     </footer>
+
+    <script>
+      var prevScrollpos = window.pageYOffset;
+      window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById("topNav").style.top = "0";
+        } else {
+          document.getElementById("topNav").style.top = "-50px";
+        }
+        prevScrollpos = currentScrollPos;
+      }
+    </script>
 
   </body>
 </html>

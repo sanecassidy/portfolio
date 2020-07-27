@@ -55,7 +55,12 @@ nav {
   background-color: rgb(230, 159, 0); /*previously #996600*/
   font-weight: 500;
   text-align: center;
-  /* flex: 1 0 auto;  Added 2020-02-14 to try to push footer down. */
+  /* 2020-07-27 from w3schools: Hide Menu on Scroll */
+  position: fixed; /* Make it stick/fixed */
+  top: 0; /* Stay on top */
+  width: 100%; /* Full width */
+  display: block;
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }
 
 nav p{
@@ -132,7 +137,7 @@ nav a:hover, footer a:hover {
 }
 
 main {
-  padding: 0 1em;
+  padding: 25px 1em 1em; /* 2020-07-27 was "0 1em", changed to accommodate menu hide on scroll */
 }
 
 .homePage { /* Do I even still use this class anymore? I don't think so. */
