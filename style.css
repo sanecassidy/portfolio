@@ -52,7 +52,7 @@ main a {
 }
 
 nav {
-  background-color: rgb(230, 159, 0); /*previously #996600*/
+  background-color: rgba(255, 255, 255, 0.8); /*previously #996600; 2020-07-27 was rgb(230, 159, 0) */
   font-weight: 500;
   text-align: center;
   /* 2020-07-27 from w3schools: Hide Menu on Scroll */
@@ -133,7 +133,7 @@ nav a {
 }
 
 nav a:hover, footer a:hover {
-  background-color: rgb(255, 255, 255, 0.3); /* #687864; */
+  background-color: rgb(0, 0, 0, 0.3); /* #687864; */
 }
 
 main {
@@ -194,14 +194,14 @@ article {
   /* float: left;  Commented out because Visual Studio Code indicated an error. Error may or may not related to my adoption of the display: flex structure which I adopted, obviating this line. I'm not sure. */
   width: 221px;
   height: 221px;
-  border: 5px solid #8FC1E3;
-  border-radius: 50%;
+  /* border: 5px solid white; /* 2020-07-27 color was #8FC1E3 */
+  /* border-radius: 10px; /* 2020-07-27 was 50% */
   display: inline-block; /* added 2020-02-12, may not be necessary */
 }
 
 .containerOfCircles {
   margin: 0 auto;
-  max-width: 1000px; /*964px is smallest width that allows for 4 circles in row. 723px is smallest width that allows for 3 circles in row.*/
+  max-width: 950px; /*964px is smallest width that allows for 4 circles in row. 723px is smallest width that allows for 3 circles in row.*/
   display: flex; /* added 2020-02-12 */
   flex-direction: row;
   flex-wrap: wrap;
@@ -211,7 +211,7 @@ article {
 .darkGel {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  /* border-radius: 5px; /* 2020-07-27 was 50% */
 }
 
 .darkGel:hover {
@@ -329,7 +329,7 @@ p img {
 
 footer {
   clear: both;
-  background-color: hsl(210, 100%, 50%); /* Was #336699; */
+  /* background-color: hsl(210, 100%, 50%); /* Was #336699; 2020-07-27 color removed completely */
   padding: 0 1em;
   flex-shrink: 0; /* Added 2020-02-14 to try to push footer down. */
 }
@@ -352,4 +352,10 @@ footer a {
 footer ul { /* This was necessary to remove white space below the footer bar. */
   margin-top: 0;
   margin-bottom: 0;
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
 }
