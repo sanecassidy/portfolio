@@ -245,7 +245,7 @@ table {
 }
 
 #hjb {
-  background-image: url("images/p3_hjb_final, top.JPG");
+  background-image: url("images/artByAPM_HJB_2020-07-27T2250.jpg"); /* 2020-07-27 was "images/p3_hjb_final, top.JPG" */
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: center;
@@ -287,7 +287,7 @@ table {
 }
 
 #twinbs {
-  background-image: url("images/p9_twinbs_piece.jpg");
+  background-image: url("images/artByAPM_TwinBs_2020-07-27T2250.jpg"); /* 2020-07-27 was "images/p9_twinbs_piece.jpg" */
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center -15px;
@@ -301,7 +301,7 @@ table {
 }
 
 #escher {
-  background-image: url("images/p11_Escher_puzzle_complete.jpg");
+  background-image: url("images/artByAPM_Escher_2020-07-27T2250.jpg"); /* 2020-07-27 was "images/p11_Escher_puzzle_complete.jpg" */
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
