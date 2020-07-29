@@ -273,10 +273,17 @@ table {
 }
 
 #gofast {
-  background-image: url("images/artByAPM_GOFAST_2020-07-28T1453.png"); /* 2020-07-28 was "p7_gofast_still.JPG" */
+  background-image: url("images/artByAPM_GOFAST_2020-07-29T1338.png"); /* 2020-07-28 was "p7_gofast_still.JPG" */
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center 0;
+}
+
+#gofastMain {
+  background-image: url("images/p7_gofast_still-crop.JPG");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /* background-position: center; */
 }
 
 #mothership {
