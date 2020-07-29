@@ -10,9 +10,11 @@
     <meta name=viewport content="width=device-width, initial-scale=1">
 
     <link rel="icon" href="images/favicon.png">  <!--This adds a "favicon" visible in the tab.-->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script> <!-- 2020-07-29 added to enable fadeTo function -->
   </head>
 
-  <body>
+  <body onload="fadeOutArt()"> <!-- 2020-07-29 added onload function call -->
 
     <div class="notFooter">
       <nav id="topNav">
@@ -42,7 +44,10 @@
         -->
         
         <h1>M. C. Escher Tessellation Puzzle</h1>
-        <img src="images/p11_Escher_puzzle_complete.jpg" alt="">
+        
+        <div id="escherMain">
+          <img id="art" src="images/artByAPM_Escher_2020-07-27T2250.png" alt="">
+        </div>
 
         <h2>Inception</h2>
         <p>This was a personal project to make an art- and geometry- focused birthday gift for my brother's boys, who just turned ages 6 and 4 in the same month.</p>
@@ -121,6 +126,11 @@
           document.getElementById("topNav").style.top = "-50px";
         }
         prevScrollpos = currentScrollPos;
+      }
+
+      // 2020-07-29
+      function fadeOutArt() {
+        $("#art").fadeTo(3000, 0);
       }
     </script>
 
