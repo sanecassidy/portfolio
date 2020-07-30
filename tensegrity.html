@@ -10,9 +10,11 @@
     <meta name=viewport content="width=device-width, initial-scale=1">
 
     <link rel="icon" href="images/favicon.png">  <!--This adds a "favicon" visible in the tab.-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script> <!-- 2020-07-29 added to enable fadeTo function -->
   </head>
 
-  <body>
+  <body onload="fadeOutArt()"> <!-- 2020-07-29 added onload function call -->
 
     <div class="notFooter">
       <nav id="topNav">
@@ -37,7 +39,10 @@
       <main>
         
         <h1>Tensegrity Toys and Construction Set</h1>
-        <img src="images/p6_tensegrity_cover-letter.JPG" alt="An early tensegrity ''coverletter''">
+        
+        <div id="tensegrityMain">
+          <img id="art" src="images/artByAPM_tensegrity_2020-07-29T1640.png" alt="An early tensegrity ''coverletter''">
+        </div>
 
         <h2>Inception</h2>
         <p>I had always been fascinated by the somewhat abstruse architectural concept of tensegrity -- in which structures are so arranged that certain compressive elements seem to float, suspended only by a network of thin, tensile elements. I had seen this design principle used in art pieces, bridges, and even a couple toys, and I wanted to explore it for myself.</p>
@@ -109,6 +114,11 @@
     </footer>
 
     <script>
+      // 2020-07-29
+      function fadeOutArt() {
+        $("#art").fadeTo(3000, 0);
+      }
+
       var prevScrollpos = window.pageYOffset;
       window.onscroll = function() {
       var currentScrollPos = window.pageYOffset;

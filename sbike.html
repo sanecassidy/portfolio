@@ -10,9 +10,11 @@
     <meta name=viewport content="width=device-width, initial-scale=1">
 
     <link rel="icon" href="images/favicon.png">  <!--This adds a "favicon" visible in the tab.-->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script> <!-- 2020-07-29 added to enable fadeTo function -->
   </head>
 
-  <body>
+  <body onload="fadeOutArt()"> <!-- 2020-07-29 added onload function call -->
 
     <div class="notFooter">
       <nav id="topNav">
@@ -37,7 +39,10 @@
       <main>
 
         <h1>S-Bike</h1>
-        <img src="images/p2_sbike_full-prototype.jpg" alt="">
+        
+        <div id="sbikeMain">
+          <img id="art" src="images/artByAPM_sbike_2020-07-29T1726.png" alt="">
+        </div>
 
         <h2>Inception</h2>
         <p></p>
@@ -76,7 +81,7 @@
 
         <img src="images/p2_sbike_half-and-half.jpg" alt="">
 
-        <img src="images/p2_sbike_ridden.jpg" alt="">
+        <img src="images/p2_sbike_full-prototype.jpg" alt="">
 
 
         <h5>This page is a work in progress, last updated 2020-02-13.
@@ -119,6 +124,11 @@
           document.getElementById("topNav").style.top = "-50px";
         }
         prevScrollpos = currentScrollPos;
+      }
+
+      // 2020-07-29
+      function fadeOutArt() {
+        $("#art").fadeTo(3000, 0);
       }
     </script>
 

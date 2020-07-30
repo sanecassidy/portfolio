@@ -10,9 +10,11 @@
     <meta name=viewport content="width=device-width, initial-scale=1">
 
     <link rel="icon" href="images/favicon.png">  <!--This adds a "favicon" visible in the tab.-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script> <!-- 2020-07-29 added to enable fadeTo function -->
   </head>
 
-  <body>
+  <body onload="fadeOutArt()"> <!-- 2020-07-29 added onload function call -->
 
     <div class="notFooter">
       <nav id="topNav">
@@ -37,7 +39,10 @@
       <main>
 
         <h1>Heavy Juggling Balls</h1>
-        <img src="images/p3_hjb_full-set.JPG" alt="Full set from CAD, showing how glyphs in different orientations spells my name">
+        
+        <div id="hjbMain">
+          <img id="art" src="images/artByAPM_HJB_2020-07-29T1640.png" alt="Front view from CAD, showing glyph">
+        </div>
 
         <h2>Inception</h2>
         <p>Stanford University's Design and Manufacturing course (ME 203) includes an open-ended project in which each student is encouraged to define, design, prototype, and manufacture an object of their own conception. The object can be just about anything so long as, by bringing it into existence, the student demonstrates a facility with the manufacturing tools available to them at Stanford's Product Realization Laboratory (or PRL).</p>
@@ -70,7 +75,7 @@
           </tr>
         </table>
 
-        <img src="images/p3_hjb_final, top.JPG" alt="Front view from CAD, showing glyph">
+        <img src="images/p3_hjb_full-set.JPG" alt="Full set from CAD, showing how glyphs in different orientations spells my name">
 
         <h5>This page is a work in progress, last updated 2020-02-13.
           <br>Additional content will be added soon.</h5>
@@ -116,6 +121,11 @@ After generating a dozen different ideas for possible projects, from a new kind 
           document.getElementById("topNav").style.top = "-50px";
         }
         prevScrollpos = currentScrollPos;
+      }
+
+      // 2020-07-29
+      function fadeOutArt() {
+        $("#art").fadeTo(3000, 0);
       }
     </script>
 

@@ -10,9 +10,11 @@
     <meta name=viewport content="width=device-width, initial-scale=1">
 
     <link rel="icon" href="images/favicon.png">  <!--This adds a "favicon" visible in the tab.-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script> <!-- 2020-07-29 added to enable fadeTo function -->
   </head>
 
-  <body>
+  <body onload="fadeOutArt()"> <!-- 2020-07-29 added onload function call -->
 
     <div class="notFooter">
       <nav id="topNav">
@@ -37,7 +39,10 @@
       <main>
 
         <h1>The Elfshelf</h1>
-        <img src="images/p4_elfshelf_CAD.jpg" alt="Concept depicted in CAD image">
+        
+        <div id="elfshelfMain">
+          <img id="art" src="images/artByAPM_elfshelf_2020-07-29T1838.png" alt="Concept depicted in CAD image">
+        </div>
 
         <h2>Inception</h2>
         <p>While attending a class titled "From Play to Innovation" hosted by Stanford University's Hasso Plattner Institute of Design (also known as the d.school), I encountered this open-ended design problem, posed as a class project: "How could Scholastic Book Fairs be more playful?"</p>
@@ -108,6 +113,11 @@
           document.getElementById("topNav").style.top = "-50px";
         }
         prevScrollpos = currentScrollPos;
+      }
+
+      // 2020-07-29
+      function fadeOutArt() {
+        $("#art").fadeTo(3000, 0);
       }
     </script>
 
