@@ -44,7 +44,7 @@ main {
 }
 
 .indexPage { /* Experimenting here to see if I can make the circles more than 3-across. */
-  max-width: 1300px; /* 2020-07-30 was 1000px */
+  max-width: 1100px; /* 2020-07-30 was 1000px */
 }
 
 main a {
@@ -201,7 +201,7 @@ article {
 
 .containerOfCircles {
   margin: 0 auto;
-  max-width: 1300px; /*964px is smallest width that allows for 4 circles in row. 723px is smallest width that allows for 3 circles in row. || 2020-07-30 was 950px */
+  max-width: 1100px; /*964px is smallest width that allows for 4 circles in row. 723px is smallest width that allows for 3 circles in row. || 2020-07-30 was 950px */
   display: flex; /* added 2020-02-12 */
   flex-direction: row;
   flex-wrap: wrap;
