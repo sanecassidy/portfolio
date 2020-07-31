@@ -46,7 +46,7 @@
         <h1>M. C. Escher Tessellation Puzzle</h1>
         
         <div id="escherMain">
-          <img id="art" src="images/artByAPM_Escher_2020-07-29T1640.png" alt="">
+          <img id="art" onclick="fadeArtInAndOut()" src="images/artByAPM_Escher_2020-07-29T1640.png" alt="">
         </div>
 
         <h2>Inception</h2>
@@ -132,6 +132,16 @@
         }
         prevScrollpos = currentScrollPos;
       }
+
+      // 2020-07-31
+      function fadeArtInAndOut() {
+        $("#art").fadeTo(1500, 1);
+        setTimeout(fadeBackOut, 3000)
+      }
+      function fadeBackOut() {
+        $("#art").fadeTo(1500, 0);
+      }
+      
     </script>
 
   </body>

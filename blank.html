@@ -44,7 +44,7 @@
         <h1>Title</h1>
         
         <div id="___Main">
-          <img id="art" src="___" alt="">
+          <img id="art" onclick="fadeArtInAndOut()" src="___" alt="">
         </div>
 
         <h2>Inception</h2>
@@ -112,6 +112,16 @@
       function fadeOutArt() {
         $("#art").fadeTo(3000, 0);
       }
+
+      // 2020-07-31
+      function fadeArtInAndOut() {
+        $("#art").fadeTo(1500, 1);
+        setTimeout(fadeBackOut, 3000)
+      }
+      function fadeBackOut() {
+        $("#art").fadeTo(1500, 0);
+      }
+      
     </script>
 
   </body>

@@ -41,7 +41,7 @@
         <h1>S-Bike</h1>
         
         <div id="sbikeMain">
-          <img id="art" src="images/artByAPM_sbike_2020-07-29T1726.png" alt="">
+          <img id="art" onclick="fadeArtInAndOut()" src="images/artByAPM_sbike_2020-07-29T1726.png" alt="">
         </div>
 
         <h2>Inception</h2>
@@ -130,6 +130,16 @@
       function fadeOutArt() {
         $("#art").fadeTo(3000, 0);
       }
+
+      // 2020-07-31
+      function fadeArtInAndOut() {
+        $("#art").fadeTo(1500, 1);
+        setTimeout(fadeBackOut, 3000)
+      }
+      function fadeBackOut() {
+        $("#art").fadeTo(1500, 0);
+      }
+      
     </script>
 
   </body>

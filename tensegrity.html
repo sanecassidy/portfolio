@@ -41,7 +41,7 @@
         <h1>Tensegrity Toys and Construction Set</h1>
         
         <div id="tensegrityMain">
-          <img id="art" src="images/artByAPM_tensegrity_2020-07-29T1640.png" alt="An early tensegrity ''coverletter''">
+          <img id="art" onclick="fadeArtInAndOut()" src="images/artByAPM_tensegrity_2020-07-29T1640.png" alt="An early tensegrity ''coverletter''">
         </div>
 
         <h2>Inception</h2>
@@ -129,6 +129,16 @@
         }
         prevScrollpos = currentScrollPos;
       }
+
+      // 2020-07-31
+      function fadeArtInAndOut() {
+        $("#art").fadeTo(1500, 1);
+        setTimeout(fadeBackOut, 3000)
+      }
+      function fadeBackOut() {
+        $("#art").fadeTo(1500, 0);
+      }
+      
     </script>
 
   </body>

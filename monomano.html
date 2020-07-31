@@ -41,7 +41,7 @@
         <h1>MonoMano (Monkey Bars Prosthesis)</h1>
         
         <div id="monomanoMain">
-          <img id="art" src="images/p5_monomano_CAD-in-use.png" alt="Concept depicted in CAD image">
+          <img id="art" onclick="fadeArtInAndOut()" src="images/p5_monomano_CAD-in-use.png" alt="Concept depicted in CAD image">
         </div>
 
         <h2>Inception</h2>
@@ -119,6 +119,16 @@
       function fadeOutArt() {
         $("#art").fadeTo(3000, 0);
       }
+
+      // 2020-07-31
+      function fadeArtInAndOut() {
+        $("#art").fadeTo(1500, 1);
+        setTimeout(fadeBackOut, 3000)
+      }
+      function fadeBackOut() {
+        $("#art").fadeTo(1500, 0);
+      }
+      
     </script>
 
   </body>

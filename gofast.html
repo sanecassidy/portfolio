@@ -41,11 +41,11 @@
         <h1>GOFAST (Gigantic Outdoor Floating Art Structure)</h1>
         
         <div id="gofastMain">
-          <img id="art" src="images/artByAPM_GOFAST_2020-07-28T2138.png" alt="Me hoisting the GOFAST over my head"> <!-- 2020-07-29 added "art" id tag for fadeTo function, also changed this to link to Olive's art, moved actual photograph to style sheet as background of new div wrapper "gofastMain" -->
+          <img id="art" onclick="fadeArtInAndOut()" src="images/artByAPM_GOFAST_2020-07-28T2138.png" alt="Me hoisting the GOFAST over my head"> <!-- 2020-07-29 added "art" id tag for fadeTo function, also changed this to link to Olive's art, moved actual photograph to style sheet as background of new div wrapper "gofastMain" -->
         </div>
 
         <h2>Inception</h2>
-        <p>After working on my handheld <a href="6_tensegrity.html">tensegrity toy</a> project for a little over a year, I decided it was time to kick things up a notch.  A friend from NASA helped me build my first human-scale tensegrity using some interesting household materials.</p>
+        <p>After working on my handheld <a href="tensegrity.html">tensegrity toy</a> project for a little over a year, I decided it was time to kick things up a notch.  A friend from NASA helped me build my first human-scale tensegrity using some interesting household materials.</p>
 
         <h2>Concept</h2>
         <p>A relatively large, elastic tensegrity, with at least one dimension approximately the same length as an adult human body.</p>
@@ -123,6 +123,16 @@
       function fadeOutArt() {
         $("#art").fadeTo(3000, 0);
       }
+
+      // 2020-07-31
+      function fadeArtInAndOut() {
+        $("#art").fadeTo(1500, 1);
+        setTimeout(fadeBackOut, 3000)
+      }
+      function fadeBackOut() {
+        $("#art").fadeTo(1500, 0);
+      }
+
     </script>
 
       

@@ -57,6 +57,7 @@ nav {
   text-align: center;
   /* 2020-07-27 from w3schools: Hide Menu on Scroll */
   position: fixed; /* Make it stick/fixed */
+  z-index: 1; /* 2020-07-31 added to fix bug where nav bar wasn't accessible when over art image that faded away from project page */
   top: 0; /* Stay on top */
   width: 100%; /* Full width */
   display: block;
