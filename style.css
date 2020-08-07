@@ -143,9 +143,13 @@ With .circle class set to width 325px, the magic break point is apparently 739px
     display: none;
   }
 }
+
 @media only screen and (max-width: 738px) {
   .wide {
     display: none;
+  }
+  nav a {
+    padding: 0;
   }
 }
 
