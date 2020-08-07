@@ -18,16 +18,6 @@ body {
   flex-direction: column;
 }
 
-nav, a, footer {
-  color: #F7F9FB; /*#F8E9A1;  This is an alternative, light yellow color.*/
-  text-shadow:
-    /*cardinal*/ 2px 0px 0px black, -2px 0px 0px black, 0px 2px 0px black, 0px -2px 0px black
-    /*diagonal*/, 1px 1px 0px black, 1px -1px 0px black, -1px 1px 0px black, -1px -1px 0px black
-    /*rounding*/ , 2px 1px 0px black, 2px -1px 0px black, 1px 2px 0px black, 1px -2px 0px black, -1px 2px 0px black, -1px -2px 0px black, -2px 1px 0px black, -2px -1px 0px black
-    /*blur*/ , 0 0 6px black
-    ;
-}
-
 h1 {
   text-align: center;
 }
@@ -45,16 +35,32 @@ main {
 
 .indexPage { /* Experimenting here to see if I can make the circles more than 3-across. */
   max-width: 1100px; /* 2020-07-30 was 1000px */
+  margin: 10px auto; /* 2020-08-06 added to shift thumbnails down from navbar. 7px brings the top-most thumbnail line-to-line with the hover region of the navbar links. */
 }
 
 main a {
   text-decoration: none; /* Takes the underline away. */
 }
 
+nav, a, footer {
+  color: #F7F9FB; /*#F8E9A1;  This is an alternative, light yellow color.*/
+  text-shadow:
+    /*cardinal*/ 2px 0px 0px black, -2px 0px 0px black, 0px 2px 0px black, 0px -2px 0px black
+    /*diagonal*/, 1px 1px 0px black, 1px -1px 0px black, -1px 1px 0px black, -1px -1px 0px black
+    /*rounding*/ , 2px 1px 0px black, 2px -1px 0px black, 1px 2px 0px black, 1px -2px 0px black, -1px 2px 0px black, -1px -2px 0px black, -2px 1px 0px black, -2px -1px 0px black
+    /*blur*/ , 0 0 6px black
+    ;
+}
+
+nav, footer { /* 2020-08-06 opening up nav bar text */
+  letter-spacing: 2px;
+}
+
 nav {
-  background-color: rgba(255, 255, 255, 0.8); /*previously #996600; 2020-07-27 was rgb(230, 159, 0) */
+  background-color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   text-align: center;
+
   /* 2020-07-27 from w3schools: Hide Menu on Scroll */
   position: fixed; /* Make it stick/fixed */
   z-index: 1; /* 2020-07-31 added to fix bug where nav bar wasn't accessible when over art image that faded away from project page */
@@ -64,15 +70,28 @@ nav {
   transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }
 
-nav p{
-  margin-top: 0; /* This clears a white space that was appearing above the nav bar. */
-  margin-bottom: 0;
+nav a {
+  font-size: 25px; /* 2020-08-06 was 1.2em on top of font-size 22px declared in nav section */ 
+  letter-spacing: 2px; /* added 2020-08-06 */
+  padding: 0 .5em 0 .5em;
+  text-decoration: none;
 }
 
-nav p a{ /* This section resizes the nav bar link padding to bring the links closer together. */
+nav a:hover, footer a:hover {
+  background-color: rgb(0, 0, 0, 0.3); /* #687864; */
+}
+
+/* This clears a white space that was appearing above the nav bar. */
+/* nav p{
+  margin-top: 0; 
+  margin-bottom: 0;
+} */
+
+/* This section resizes the nav bar link padding to bring the links closer together. */
+/* nav p a{ 
   padding-right: 3px;
   padding-left: 3px;
-}
+} */
 
 .nav1, .nav2, .nav3 {
   color: white; /* alternate colors considered include rgb(86, 180, 233) rgb(240,228,66) rgb(213,94,0) rgb(0,158,115) */
@@ -84,17 +103,50 @@ nav p a{ /* This section resizes the nav bar link padding to bring the links clo
   ;
 }
 
-#nav4 {
-  color: hsl(120, 100%, 90%); /* hsl(201.6, 77%, 80%); /* L= 62.5% for rgb(86, 180, 233) */
+.nav4 {
+  /* color: white; /* rgb(196,194,185); /* rgb(45,136,39); /* hsl(120, 100%, 90%); /* hsl(201.6, 77%, 80%); /* L= 62.5% for rgb(86, 180, 233) */
+  
+  text-shadow:
+  /*cardinal*/ 2px 0px 0px rgb(45,136,39), -2px 0px 0px rgb(45,136,39), 0px 2px 0px rgb(45,136,39), 0px -2px 0px rgb(45,136,39)
+  /*diagonal*/, 1px 1px 0px rgb(45,136,39), 1px -1px 0px rgb(45,136,39), -1px 1px 0px rgb(45,136,39), -1px -1px 0px rgb(45,136,39)
+  /*rounding*/ , 2px 1px 0px rgb(45,136,39), 2px -1px 0px rgb(45,136,39), 1px 2px 0px rgb(45,136,39), 1px -2px 0px rgb(45,136,39), -1px 2px 0px rgb(45,136,39), -1px -2px 0px rgb(45,136,39), -2px 1px 0px rgb(45,136,39), -2px -1px 0px rgb(45,136,39)
+  /*blur*/ , 0 0 6px rgb(45,136,39)
 }
 
-#nav5 {
-  color: hsl(240, 100%, 90%); /* hsl(26.5, 100%, 80%); /* L= 41.8% for rgb(213,94,0) */
+.nav5 {
+  /* color: white; /* rgb(219,191,22); /* rgb(3,137,170); /* hsl(240, 100%, 90%); /* hsl(26.5, 100%, 80%); /* L= 41.8% for rgb(213,94,0) */
   /*hsl(55.9, 85.3%, 60%);  based on rgb(240,228,66) */
+  
+  text-shadow:
+  /*cardinal*/ 2px 0px 0px rgb(51,55,116), -2px 0px 0px rgb(51,55,116), 0px 2px 0px rgb(51,55,116), 0px -2px 0px rgb(51,55,116)
+  /*diagonal*/, 1px 1px 0px rgb(51,55,116), 1px -1px 0px rgb(51,55,116), -1px 1px 0px rgb(51,55,116), -1px -1px 0px rgb(51,55,116)
+  /*rounding*/ , 2px 1px 0px rgb(51,55,116), 2px -1px 0px rgb(51,55,116), 1px 2px 0px rgb(51,55,116), 1px -2px 0px rgb(51,55,116), -1px 2px 0px rgb(51,55,116), -1px -2px 0px rgb(51,55,116), -2px 1px 0px rgb(51,55,116), -2px -1px 0px rgb(51,55,116)
+  /*blur*/ , 0 0 6px rgb(51,55,116)
+  ;
 }
 
-#nav6 {
-  color: hsl(0, 100%, 90%); /* hsl(163.7, 100%, 80%); /* L= 31% for rgb(0,158,115) */
+.nav6 {
+  /* color: white; /* rgb(180,189,232); /*rgb(167,34,47); /* hsl(0, 100%, 90%); /* hsl(163.7, 100%, 80%); /* L= 31% for rgb(0,158,115) */
+  
+  text-shadow:
+  /*cardinal*/ 2px 0px 0px rgb(167,34,47), -2px 0px 0px rgb(167,34,47), 0px 2px 0px rgb(167,34,47), 0px -2px 0px rgb(167,34,47)
+  /*diagonal*/, 1px 1px 0px rgb(167,34,47), 1px -1px 0px rgb(167,34,47), -1px 1px 0px rgb(167,34,47), -1px -1px 0px rgb(167,34,47)
+  /*rounding*/ , 2px 1px 0px rgb(167,34,47), 2px -1px 0px rgb(167,34,47), 1px 2px 0px rgb(167,34,47), 1px -2px 0px rgb(167,34,47), -1px 2px 0px rgb(167,34,47), -1px -2px 0px rgb(167,34,47), -2px 1px 0px rgb(167,34,47), -2px -1px 0px rgb(167,34,47)
+  /*blur*/ , 0 0 6px rgb(167,34,47)
+  ;
+}
+
+/* 2020-08-06 added some responsive design to the navbars.
+With .circle class set to width 325px, the magic break point is apparently 739px. I have no idea why it's that specific number. */
+@media only screen and (min-width: 739px) {
+  .midWidth {
+    display: none;
+  }
+}
+@media only screen and (max-width: 738px) {
+  .wide {
+    display: none;
+  }
 }
 
 #email {/* Hack for stupid problem where text shadow would be cut off left side of link to my email address on About Me page. */
@@ -125,16 +177,6 @@ ul li {
 
 .toolsMaterials {
   vertical-align: top;
-}
-
-nav a {
-  font-size: 1.2em;
-  padding: 0 .5em 0 .5em;
-  text-decoration: none; /* This is what takes the underline away. */
-}
-
-nav a:hover, footer a:hover {
-  background-color: rgb(0, 0, 0, 0.3); /* #687864; */
 }
 
 main {
@@ -179,7 +221,7 @@ article {
   overflow: auto;
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 700px) {
   figure {
     width: 100%;
     margin: 0;
@@ -311,7 +353,7 @@ table {
 }
 
 #gofast {
-  background-image: url("images/artByAPM_GOFAST_2020-07-28T2138.png"); /* 2020-07-28 was "p7_gofast_still.JPG" */
+  background-image: url("images/artByAPM_GOFAST_2020-07-29T2138.png"); /* 2020-07-28 was "p7_gofast_still.JPG" */
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center 0;
@@ -394,6 +436,7 @@ footer {
   /* background-color: hsl(210, 100%, 50%); /* Was #336699; 2020-07-27 color removed completely */
   padding: 0 1em;
   flex-shrink: 0; /* Added 2020-02-14 to try to push footer down. */
+  letter-spacing: 2px; /* added 2020-08-06 */
 }
 
 .notFooter {
