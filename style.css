@@ -96,10 +96,10 @@ nav a:hover, footer a:hover {
 .nav1, .nav2, .nav3 {
   color: white; /* alternate colors considered include rgb(86, 180, 233) rgb(240,228,66) rgb(213,94,0) rgb(0,158,115) */
   text-shadow:
-  /*cardinal*/ 2px 0px 0px black, -2px 0px 0px black, 0px 2px 0px black, 0px -2px 0px black
-  /*diagonal*/, 1px 1px 0px black, 1px -1px 0px black, -1px 1px 0px black, -1px -1px 0px black
-  /*rounding*/ , 2px 1px 0px black, 2px -1px 0px black, 1px 2px 0px black, 1px -2px 0px black, -1px 2px 0px black, -1px -2px 0px black, -2px 1px 0px black, -2px -1px 0px black
-  /*blur*/ , 0 0 6px black
+  /*cardinal*/ 2px 0px 0px rgb(50,56,68), -2px 0px 0px rgb(50,56,68), 0px 2px 0px rgb(50,56,68), 0px -2px 0px rgb(50,56,68)
+  /*diagonal*/, 1px 1px 0px rgb(50,56,68), 1px -1px 0px rgb(50,56,68), -1px 1px 0px rgb(50,56,68), -1px -1px 0px rgb(50,56,68)
+  /*rounding*/ , 2px 1px 0px rgb(50,56,68), 2px -1px 0px rgb(50,56,68), 1px 2px 0px rgb(50,56,68), 1px -2px 0px rgb(50,56,68), -1px 2px 0px rgb(50,56,68), -1px -2px 0px rgb(50,56,68), -2px 1px 0px rgb(50,56,68), -2px -1px 0px rgb(50,56,68)
+  /*blur*/ , 0 0 6px rgb(50,56,68)
   ;
 }
 
@@ -136,21 +136,19 @@ nav a:hover, footer a:hover {
   ;
 }
 
-/* 2020-08-06 added some responsive design to the navbars.
-With .circle class set to width 325px, the magic break point is apparently 739px. I have no idea why it's that specific number. */
-@media only screen and (min-width: 739px) {
-  .midWidth {
-    display: none;
-  }
+#personIcon {
+  text-shadow: none;
+  color: rgb(45,136,39);
 }
 
-@media only screen and (max-width: 738px) {
-  .wide {
-    display: none;
-  }
-  nav a {
-    padding: 0;
-  }
+#portfolioIcon {
+  text-shadow: none;
+  color: rgb(51,55,116);
+}
+
+#resumeIcon {
+  text-shadow: none;
+  color: rgb(167,34,47);
 }
 
 #email {/* Hack for stupid problem where text shadow would be cut off left side of link to my email address on About Me page. */
@@ -209,6 +207,7 @@ h5 {
 figure {
   float: left;
   width: 60%;
+  margin: 20px 10px;
 }
 
 img {
@@ -223,16 +222,6 @@ figcaption {
 
 article {
   overflow: auto;
-}
-
-@media only screen and (max-width: 700px) {
-  figure {
-    width: 100%;
-    margin: 0;
-  }
-  article {
-    width: 100%;
-  }
 }
 
 .circle {
@@ -331,10 +320,10 @@ table {
 }
 
 #monomano {
-  background-image: url("images/p5_monomano_CAD-in-use.png");
+  background-image: url("images/p5_monomano_CAD-in-use_art-stand-in.png");
   background-repeat: no-repeat;
   background-size: auto 100%;
-  background-position: center 5px;
+  background-position: center; /* 2020-08-07 was adjusted down 5px */
 }
 
 #monomanoMain {
@@ -467,4 +456,107 @@ hr {
   margin-top: 0;
   margin-bottom: 0;
   border-bottom: 0;
+  color: rgb(50,56,68);
+}
+
+#tooLong {
+  max-width: 96%;
+}
+
+
+/* 2020-08-06 & 2020-08-07 added some responsive design to the navbars.
+With .circle class set to width 325px, the magic break point from three columns to two is apparently 739px. I have no idea why it is that specific number. */
+
+/* For small screen */
+@media only screen and (max-width: 499px) {
+  .midWidth {
+    display: none;
+  }
+  .wide {
+    display: none;
+  }
+  .wideAndMidWidth {
+    display: none;
+  }
+  nav a {
+    padding: 0 auto;
+    display: inline;
+    width: 25%; /* 2020-08-07 I get an error on this line: VSC tells me that the width property should be ignored here. But this line does obviously have some affect on what I see when the viewport width is in this range. The error appears to be incorrect, but I do not know how to determine whether that is true or whether my understanding is simply lacking. */
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* For midsized screen */
+@media only screen and (min-width: 500px) and (max-width: 738px) {
+  .wide {
+    display: none;
+  }
+  .thin {
+    display: none;
+  }
+  /* I don't know why the following is necessary, but the .thin class doesn't seem to hide the FontAwesome icons. Using an ID tag seems to solve the issue. */
+  #personIcon {
+    display: none;
+  }
+  #portfolioIcon {
+    display: none;
+  }
+  #resumeIcon {
+    display: none;
+  }
+  /* nav a {
+    padding: 0;
+  } */
+  nav a {
+    padding: 0 5px;
+    display: inline;
+    /* width: 25%; */
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    /* width: 60%; */
+  }
+}
+
+/* For wide screen */
+@media only screen and (min-width: 739px) {
+  .midWidth {
+    display: none;
+  }
+  .thin {
+    display: none;
+  }
+  /* I don't know why the following is necessary, but the .thin class doesn't seem to hide the FontAwesome icons. Using an ID tag seems to solve the issue. */
+  #personIcon {
+    display: none;
+  }
+  #portfolioIcon {
+    display: none;
+  }
+  #resumeIcon {
+    display: none;
+  }
+  nav a {
+    padding: 0 15px;
+    display: inline;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* This controls how the image/article text changes as currently used only on the About Me page. */
+@media only screen and (max-width: 575px) {
+  figure {
+    width: 100%;
+    margin: 0;
+  }
+  article {
+    width: 100%;
+  }
 }
