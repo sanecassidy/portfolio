@@ -27,6 +27,16 @@ h1 {
   margin: 0 auto;
 }
 
+.centeredText {
+  text-align: center;
+  color: rgb(50,56,68);
+}
+
+.justifiedText{
+  text-align: justify;
+  text-justify: auto;
+}
+
 main {
   max-width: 800px; /* This controls the maximum width of the display area. Somebody opening the browser wider than this will just be generating wasted space to left and right of the content.*/
   margin: 16px auto;
@@ -35,7 +45,7 @@ main {
 
 .indexPage { /* Experimenting here to see if I can make the circles more than 3-across. */
   max-width: 1100px; /* 2020-07-30 was 1000px */
-  margin: 10px auto; /* 2020-08-06 added to shift thumbnails down from navbar. 7px brings the top-most thumbnail line-to-line with the hover region of the navbar links. */
+  /* margin: 10px auto; */ /* 2020-08-06 added to shift thumbnails down from navbar. 7px brings the top-most thumbnail line-to-line with the hover region of the navbar links. */
 }
 
 main a {
