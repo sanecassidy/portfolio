@@ -28,6 +28,7 @@ h1 {
 }
 
 .centeredText {
+  margin-top: 16px; /* 2020-08-10 testing */
   text-align: center;
   color: rgb(50,56,68);
 }
@@ -41,11 +42,11 @@ main {
   max-width: 800px; /* This controls the maximum width of the display area. Somebody opening the browser wider than this will just be generating wasted space to left and right of the content.*/
   margin: 16px auto;
   /* flex: 1 0 auto;  Added 2020-02-14 to try to push footer down. */
+  padding: 25px 1em 1em; /* 2020-07-27 was "0 1em", changed to accommodate menu hide on scroll */
 }
 
-.indexPage { /* Experimenting here to see if I can make the circles more than 3-across. */
+.indexPage {
   max-width: 1100px; /* 2020-07-30 was 1000px */
-  /* margin: 10px auto; */ /* 2020-08-06 added to shift thumbnails down from navbar. 7px brings the top-most thumbnail line-to-line with the hover region of the navbar links. */
 }
 
 main a {
@@ -72,7 +73,7 @@ nav {
   text-align: center;
 
   /* 2020-07-27 from w3schools: Hide Menu on Scroll */
-  position: fixed; /* Make it stick/fixed */
+  position: fixed; /* Makes position relative to viewport, not other elements on page */
   z-index: 1; /* 2020-07-31 added to fix bug where nav bar wasn't accessible when over art image that faded away from project page */
   top: 0; /* Stay on top */
   width: 100%; /* Full width */
@@ -83,28 +84,19 @@ nav {
 nav a {
   font-size: 25px; /* 2020-08-06 was 1.2em on top of font-size 22px declared in nav section */ 
   letter-spacing: 2px; /* added 2020-08-06 */
-  padding: 0 .5em 0 .5em;
+  padding: 0 .5em;
   text-decoration: none;
+}
+
+#topNav {
+  border-bottom: 1px solid rgb(182,177,173);
 }
 
 nav a:hover, footer a:hover {
   background-color: rgb(0, 0, 0, 0.3); /* #687864; */
 }
 
-/* This clears a white space that was appearing above the nav bar. */
-/* nav p{
-  margin-top: 0; 
-  margin-bottom: 0;
-} */
-
-/* This section resizes the nav bar link padding to bring the links closer together. */
-/* nav p a{ 
-  padding-right: 3px;
-  padding-left: 3px;
-} */
-
 .nav1, .nav2, .nav3 {
-  color: white; /* alternate colors considered include rgb(86, 180, 233) rgb(240,228,66) rgb(213,94,0) rgb(0,158,115) */
   text-shadow:
   /*cardinal*/ 2px 0px 0px rgb(50,56,68), -2px 0px 0px rgb(50,56,68), 0px 2px 0px rgb(50,56,68), 0px -2px 0px rgb(50,56,68)
   /*diagonal*/, 1px 1px 0px rgb(50,56,68), 1px -1px 0px rgb(50,56,68), -1px 1px 0px rgb(50,56,68), -1px -1px 0px rgb(50,56,68)
@@ -114,8 +106,6 @@ nav a:hover, footer a:hover {
 }
 
 .nav4 {
-  /* color: white; /* rgb(196,194,185); /* rgb(45,136,39); /* hsl(120, 100%, 90%); /* hsl(201.6, 77%, 80%); /* L= 62.5% for rgb(86, 180, 233) */
-  
   text-shadow:
   /*cardinal*/ 2px 0px 0px rgb(45,136,39), -2px 0px 0px rgb(45,136,39), 0px 2px 0px rgb(45,136,39), 0px -2px 0px rgb(45,136,39)
   /*diagonal*/, 1px 1px 0px rgb(45,136,39), 1px -1px 0px rgb(45,136,39), -1px 1px 0px rgb(45,136,39), -1px -1px 0px rgb(45,136,39)
@@ -124,9 +114,6 @@ nav a:hover, footer a:hover {
 }
 
 .nav5 {
-  /* color: white; /* rgb(219,191,22); /* rgb(3,137,170); /* hsl(240, 100%, 90%); /* hsl(26.5, 100%, 80%); /* L= 41.8% for rgb(213,94,0) */
-  /*hsl(55.9, 85.3%, 60%);  based on rgb(240,228,66) */
-  
   text-shadow:
   /*cardinal*/ 2px 0px 0px rgb(51,55,116), -2px 0px 0px rgb(51,55,116), 0px 2px 0px rgb(51,55,116), 0px -2px 0px rgb(51,55,116)
   /*diagonal*/, 1px 1px 0px rgb(51,55,116), 1px -1px 0px rgb(51,55,116), -1px 1px 0px rgb(51,55,116), -1px -1px 0px rgb(51,55,116)
@@ -136,8 +123,6 @@ nav a:hover, footer a:hover {
 }
 
 .nav6 {
-  /* color: white; /* rgb(180,189,232); /*rgb(167,34,47); /* hsl(0, 100%, 90%); /* hsl(163.7, 100%, 80%); /* L= 31% for rgb(0,158,115) */
-  
   text-shadow:
   /*cardinal*/ 2px 0px 0px rgb(167,34,47), -2px 0px 0px rgb(167,34,47), 0px 2px 0px rgb(167,34,47), 0px -2px 0px rgb(167,34,47)
   /*diagonal*/, 1px 1px 0px rgb(167,34,47), 1px -1px 0px rgb(167,34,47), -1px 1px 0px rgb(167,34,47), -1px -1px 0px rgb(167,34,47)
@@ -159,10 +144,6 @@ nav a:hover, footer a:hover {
 #resumeIcon {
   text-shadow: none;
   color: rgb(167,34,47);
-}
-
-#email {/* Hack for stupid problem where text shadow would be cut off left side of link to my email address on About Me page. */
-  padding-left: 3px;
 }
 
 ul {
@@ -189,17 +170,6 @@ ul li {
 
 .toolsMaterials {
   vertical-align: top;
-}
-
-main {
-  padding: 25px 1em 1em; /* 2020-07-27 was "0 1em", changed to accommodate menu hide on scroll */
-}
-
-.homePage { /* Do I even still use this class anymore? I don't think so. */
-  background-image: url("images/p3_hjb_full-set.JPG");
-  background-repeat: no-repeat;
-  background-size: 40%;
-  background-position: right top;
 }
 
 h3 {
@@ -426,6 +396,17 @@ p a {
   font-style: bold;
 }
 
+#email {/* Hack for stupid problem where text shadow would be cut off left side of link to my email address on About Me page. */
+  padding-left: 3px;
+  display: inline-block;
+}
+
+#textAndEmail {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 p img {
   display: block;
   margin-left: auto;
@@ -472,6 +453,15 @@ hr {
 #tooLong {
   max-width: 96%;
 }
+
+/* 2020-08-10 Introduced to allow inter-paragraph text spacing to be half line height, rather than full line height with br. */
+.onePointFive {
+  font-size: 0.5em;
+}
+
+/* .testing123 {
+  margin-top: 15px;
+} */
 
 
 /* 2020-08-06 & 2020-08-07 added some responsive design to the navbars.
